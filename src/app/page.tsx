@@ -1,8 +1,16 @@
+import { Container } from '@/components/Container';
+import { PostsList } from '@/components/PostsList';
+import { SpinLoader } from '@/components/SpinLoader';
+import { Suspense } from 'react';
+
 export default async function Home() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-  const data = await response.json();
+  return (
+    <Container>
+      <header className='text-center text-6xl py-8'>Elemento carregado </header>
 
-  console.log(data);
-
-  return <div>{JSON.stringify(data)}</div>;
+      <Suspense fallback={<SpinLoader />}>
+        <PostsList />
+      </Suspense>
+    </Container>
+  );
 }
