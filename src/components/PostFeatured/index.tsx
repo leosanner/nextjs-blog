@@ -1,5 +1,5 @@
 import { PostCoverImage } from '../PostCoverImage';
-import { PostHeading } from '../PostHeading';
+import { PostSummary } from '../PostSummary';
 
 export function PostFeatured() {
   const slug = 'teste';
@@ -17,20 +17,17 @@ export function PostFeatured() {
           priority: true,
         }}
       />
-      <div className='flex flex-col gap4 sm:justify-center'>
-        <time className='text-slate-600 text-sm/ block' dateTime='2025-07-28'>
-          28/07/2025
-        </time>
-
-        <PostHeading url={postLink}>Blas</PostHeading>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
-          voluptate! Reiciendis nesciunt enim suscipit dignissimos consectetur
-          veniam iure ratione quis! Aliquam similique nostrum numquam rem
-          eligendi! Assumenda fuga numquam exercitationem!
-        </p>
-      </div>
+      <PostSummary
+        postLink={postLink}
+        postHeading='h2'
+        createdAt={'2025-04-05T00:24:38.616Z'}
+        excerpt={
+          'Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,'
+        }
+        title={
+          'This will create the dillinger image and pull in the necessary dependencies.'
+        }
+      />
     </section>
   );
 }
