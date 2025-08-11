@@ -1,5 +1,6 @@
 import { formatDatetime } from '@/utils/format-datetime';
 import { PostHeading } from '../PostHeading';
+import { PostDate } from '../PostDate';
 
 type PostSummaryProps = {
   postHeading: 'h1' | 'h2';
@@ -22,9 +23,7 @@ export function PostSummary({
         {title}
       </PostHeading>
 
-      <time className='text-slate-600 block text-sm/tight' dateTime={createdAt}>
-        {formatDatetime(createdAt)}
-      </time>
+      <PostDate dateTime={createdAt} />
 
       <p>{excerpt}</p>
     </div>
